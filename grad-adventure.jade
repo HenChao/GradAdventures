@@ -7,12 +7,21 @@ head
 
 body
   if playerNameNotSet 
-    div(class='red lighten-2' id='title_header')
+    .red.lighten-2.title-header
       h1 Graduate Adventures
     +startForm
   else
-    div(class='red lighten-2' id='title_header')
-      h5 Graduate Adventures
+    .red.lighten-2.ingame-header
+      .row
+        .col.s8.m8.l8
+          h5 Graduate Adventures
+        .col.s4.m4.l4
+          .valign-wrapper
+            i.small.material-icons contacts
+            .valign {{playerName}}
+          .valign-wrapper
+            i.small.material-icons today
+            .valign {{date}}          
     +gameField
 
 template(name='startForm')

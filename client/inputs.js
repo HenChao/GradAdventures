@@ -1,7 +1,9 @@
 Template.body.helpers({
   playerNameNotSet: function() {
     return (typeof Session.get("playerName") === 'undefined') ? true : false;
-  }
+  },
+  playerName: function(){return Session.get("playerName");},
+  date: function(){return Session.get("date");},
 });
 
 Template.startForm.events({
@@ -10,6 +12,7 @@ Template.startForm.events({
     if( inputName ) {
       Session.set("playerName", inputName);
       Session.set("scriptLocation", tutorial.welcome);
+      Session.set("date",0);
     }
   }
 });
