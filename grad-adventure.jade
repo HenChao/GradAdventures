@@ -14,7 +14,7 @@ body
     .red.lighten-2.ingame-header
       .row
         .col.s8.m8.l8
-          h5 Graduate Adventures
+          h5.center-align Graduate Adventures
         .col.s4.m4.l4
           .valign-wrapper
             i.small.material-icons contacts
@@ -34,11 +34,11 @@ template(name='startForm')
 template(name='gameField')
   .console(id='console')
   .input-row.row.valign-wrapper
-    .col.s6.m4.l4.valign
-      .avatar.center-align
+    .col.s6.m7.l7.valign
+      .avatar
         .sprite-small(id='sprite')
     if showInputButtons
-      .options.col.s6.m8.l8
+      .options.col.s6.m5.l5
         ul(id='optionsList')
           li
             a.waves-effect.btn.option.red.darken-4 {{optionA}}
