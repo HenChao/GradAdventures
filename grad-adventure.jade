@@ -1,0 +1,23 @@
+head
+    title Graduate Adventures
+    link(href='http://fonts.googleapis.com/icon?family=Material+Icons',rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0')
+
+body
+  div(class='red lighten-2' id='title_header')
+    h1 Graduate Adventures
+  if playerNameNotSet 
+    +startForm
+  else
+    +gameField
+
+template(name='startForm')
+  .valign-wrapper.startForm
+    .row.valign
+      .input-field.startFormUserName
+        input(placeholder='Enter your name' type='text' id='username')
+      a.waves-effect.btn.center-align.startFormStartButton Start!
+
+template(name='gameField')
+  .console
