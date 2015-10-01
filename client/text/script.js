@@ -95,14 +95,24 @@ tutorial = {
          "You arrive on campus a bit earlier than expected, so you have some time before " +
          "you need to report for work. What would you like to do?",
     options:{
-      A:{text:"Stop by the Lab",next:"tutorial.breakfastA"},
-      B:{text:"Go to the Commons",next:"tutorial.breakfastB"},
-      C:{text:"Sit in a Class",next:"tutorial.breakfastC"},
-      D:{text:"Get a Cup of Coffee",next:"tutorial.breakfastD"},
+      A:{text:"Stop by the Lab",next:"ending.unfinished"},
+      B:{text:"Go to the Commons",next:"ending.unfinished"},
+      C:{text:"Sit in a Class",next:"ending.unfinished"},
+      D:{text:"Get a Cup of Coffee",next:"ending.unfinished"},
     },
+  },
+};
+
+ending = {
+  unfinished:{
+    text:"Thanks for trying out the game so far. If you're seeing this message, then " +
+         "that means the game is still unfinished! You'll be taken back to the beginning " +
+         "again, so feel free to try out new options!",
+    jump:"tutorial.welcome",
   },
 };
 
 stages = {
   "tutorial": this.tutorial,
+  "ending": this.ending,
 };

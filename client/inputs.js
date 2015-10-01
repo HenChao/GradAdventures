@@ -8,9 +8,9 @@ Template.body.helpers({
   money: function(){return Session.get("money");},
 });
 
-Template.body.onRendered(function() {
+/*Template.body.onRendered(function() {
   $('body').bind('touchmove', function(e){e.preventDefault()})
-});
+});*/
 
 startGame = function() {
   var inputName = $('.username').val();
