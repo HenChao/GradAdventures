@@ -88,10 +88,7 @@ tutorial = {
     text:"Showered, dressed, and breakfasted up. You pocket checked for your wallet " +
          "and phone, then you're off to campus! Though you've been on campus before " +
          "to visit when applying to the graduate program, it isn't your undergraduate " +
-         "alma mater, so everything around is still foreign to you. Though you do notice " +
-         "a lot of those commonalities across Universities: weird art structures that " +
-         "litter the grounds, fancy Teslas driven by the Professors and cheap Civics " +
-         "by the students, and the guard posts towering the outskirts of campus. " +
+         "alma mater, so everything around is still foreign to you. " +
          "You arrive on campus a bit earlier than expected, so you have some time before " +
          "you need to report for work. What would you like to do?",
     options:{
