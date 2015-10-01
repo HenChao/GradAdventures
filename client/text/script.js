@@ -30,8 +30,16 @@ tutorial = {
     jump:"tutorial.breakfast"},
 
   breakfast:{
-    text:"The most important meal of the day.",
-  }
+    text:"The most important meal of the day: Breakfast. The decisions you make, " +
+         "especially on an important day like today, will tell the world what type " +
+         "of a student you'll be. Choose wisely.",
+    options:{
+      A:{text:"Bacon Pancakes",next:"tutorial.programA"},
+      B:{text:"Rear Admiral Crunch",next:"tutorial.programB"},
+      C:{text:"Donuts",next:"tutorial.programC"},
+      D:{text:"Water",next:"tutorial.programD"},
+    },
+  },
 };
 
 stages = {
