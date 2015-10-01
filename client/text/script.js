@@ -46,6 +46,9 @@ tutorial = {
          "your tasty food, you can feel the creative juices flowing " +
          "in your mind, and the high cholesterol flowing through " +
          "your heart.",
+    changeStat:{
+      setHealth:80,
+      },
     jump:"tutorial.toSchool",},
   breakfastB:{
     text:"'About time,' you think to yourself. The Captain of your " +
@@ -53,11 +56,17 @@ tutorial = {
          "service and dedication. As you avoid ripping the upper part of " +
          "your mouth into shreads, you can feel your life falling into place " +
          "with military discipline.",
+    changeStat:{
+      setHealth:100,
+      },
     jump:"tutorial.toSchool",},
   breakfastC:{
     text:"Ah, the personal favorite. Did you know that the bear claw is a Danish " +
          "pastry which originated in the United States? As you ponder on this supposed " +
          "paradox, you can feel your brain kicking into gear, ready for the rest of the day.",
+    changeStat:{
+      setHealth:100,
+      },
     jump:"tutorial.toSchool",},
   breakfastD:{
     text:"A hearty breakfast, though not one which would be recommended by the " +
@@ -66,6 +75,9 @@ tutorial = {
          "avian flu. Scientists are calling it a wash. As you suppress your gag " +
          "reflex to get the last yolk down, you feel your body getting ready to " +
          "face the challenges ahead.",
+    changeStat:{
+      setHealth:120,
+      },
     jump:"tutorial.toSchool",},
 
   toSchool:{
@@ -75,7 +87,7 @@ tutorial = {
          "alma mater, so everything around is still foreign to you. Though you do notice " +
          "a lot of those commonalities across Universities: weird art structures that " +
          "litter the grounds, fancy Teslas driven by the Professors and cheap Civics " +
-         "by the students, and the guard towers littering the outskirts of campus. " +
+         "by the students, and the guard posts towering the outskirts of campus. " +
          "You arrive on campus a bit earlier than expected, so you have some time before " +
          "you need to report for work. What would you like to do?",
     options:{

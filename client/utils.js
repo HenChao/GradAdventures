@@ -25,6 +25,11 @@ setOptionValues = function(options){
 
 advanceScript = function(){
   currentLocationInScript = Session.get("scriptLocation");
+
+  if (typeof(currentLocationInScript.changeStat) != "undefined"){
+     changeStats(currentLocationInScript.changeStat);
+  }
+
   appendConsoleText(currentLocationInScript.text.format(),
     function() {
       if (typeof(currentLocationInScript.jump) != "undefined"){
@@ -35,6 +40,15 @@ advanceScript = function(){
         setOptionValues(currentLocationInScript.options);
         Session.set("showInputs", true);
       }
+  });
+};
+
+changeStats = function(statChanged){
+  $.each(statChanged, function(stat, value){
+    switch(stat) {
+      case "setHealth":
+        Session.set("health",value);
+    }
   });
 };
 
