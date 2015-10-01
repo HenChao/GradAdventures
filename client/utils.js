@@ -1,4 +1,5 @@
-slowAppendConsoleText = function(text, callback){
+appendConsoleText = function(text, callback){
+  var textSpeed = 30; //In ms
   var displayInterval;
   text = text.split('');
   displayInterval = setInterval(function() {
@@ -8,7 +9,7 @@ slowAppendConsoleText = function(text, callback){
       return callback();
     }
     $(".console").append(word);
-  }, 30);
+  }, textSpeed);
 };
 
 setOptionValues = function(options){
@@ -18,13 +19,13 @@ setOptionValues = function(options){
   Session.set("optionD", options.D.text);
 };
 
-showTextAndOptions = function(){
+advanceScript = function(){
   currentLocationInScript = Session.get("scriptLocation");
-  slowAppendConsoleText(currentLocationInScript.text.format(),
+  appendConsoleText(currentLocationInScript.text.format(),
     function() {
       if (typeof(currentLocationInScript.jump) != "undefined"){
         Session.set("scriptLocation", parseNextScriptLocation(currentLocationInScript.jump));
-        showTextAndOptions();
+        advanceScript();
       } else {
         setOptionValues(currentLocationInScript.options);
         Session.set("showInputs", true);
@@ -32,10 +33,9 @@ showTextAndOptions = function(){
   });
 };
 
-clearAndRedraw = function(){
+clearScreen = function(){
   Session.set("showInputs", false);
   $(".console").html('');
-  showTextAndOptions();
 };
 
 parseNextScriptLocation = function(location) {
@@ -51,7 +51,6 @@ getResultForOption = function(chosenOption) {
       return parseNextScriptLocation(scriptOptions[choice].next);
     }
   }
-
   return "Result not found for the chosen option";
 }
 

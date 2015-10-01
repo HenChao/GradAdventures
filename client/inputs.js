@@ -8,7 +8,6 @@ Template.startForm.events({
   "click .startFormStartButton": function(event) {
     var inputName = $('#username').val();
     if( inputName ) {
-      $('.startForm').fadeOut();
       Session.set("playerName", inputName);
       Session.set("scriptLocation", tutorial.welcome);
     }
@@ -16,8 +15,8 @@ Template.startForm.events({
 });
 
 Template.gameField.onRendered(function () {
-  Session.set("showInputs", false);
-  showTextAndOptions();
+  clearScreen();
+  advanceScript();
 });
 
 Template.gameField.helpers({
@@ -34,6 +33,7 @@ Template.gameField.events({
   "click .option" : function(event) {
        var nextScriptLocation = getResultForOption($(event.toElement).text()); 
        Session.set("scriptLocation", nextScriptLocation);
-       clearAndRedraw();
+       clearScreen();
+       advanceScript();
   } 
 });
