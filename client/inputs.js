@@ -6,6 +6,10 @@ Template.body.helpers({
   date: function(){return Session.get("date");},
 });
 
+Template.body.onRendered(function() {
+  $('body').bind('touchmove', function(e){e.preventDefault()})
+});
+
 Template.startForm.events({
   "click .startFormStartButton": function(event) {
     var inputName = $('#username').val();
@@ -20,6 +24,7 @@ Template.startForm.events({
 Template.gameField.onRendered(function () {
   clearScreen();
   advanceScript();
+  Ps.initialize(document.getElementById('console'));
 });
 
 Template.gameField.helpers({

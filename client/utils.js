@@ -11,6 +11,8 @@ appendConsoleText = function(text, callback){
       }
     }
     $(".console").append(word);
+    document.getElementById('console').scrollTop = 9999;
+    Ps.update(document.getElementById('console'));
   }, textSpeed);
 };
 
