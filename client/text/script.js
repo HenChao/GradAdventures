@@ -48,6 +48,7 @@ tutorial = {
          "your heart.",
     changeStat:{
       setHealth:80,
+      setMoney:100,
       },
     jump:"tutorial.toSchool",},
   breakfastB:{
@@ -58,6 +59,7 @@ tutorial = {
          "with military discipline.",
     changeStat:{
       setHealth:100,
+      setMoney:100,
       },
     jump:"tutorial.toSchool",},
   breakfastC:{
@@ -66,6 +68,7 @@ tutorial = {
          "paradox, you can feel your brain kicking into gear, ready for the rest of the day.",
     changeStat:{
       setHealth:100,
+      setMoney:100,
       },
     jump:"tutorial.toSchool",},
   breakfastD:{
@@ -77,6 +80,7 @@ tutorial = {
          "face the challenges ahead.",
     changeStat:{
       setHealth:120,
+      setMoney:100,
       },
     jump:"tutorial.toSchool",},
 

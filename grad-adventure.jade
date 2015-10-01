@@ -3,7 +3,7 @@ head
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons',rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css')
     link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
-    meta(name='viewport',content='width=device-width, initial-scale=1.0')
+    meta(name='viewport',content='width=device-width, initial-scale=1.0,minimal-ui')
 
 body
   if playerNameNotSet 
@@ -32,11 +32,10 @@ body
     +gameField
 
 template(name='startForm')
-  .valign-wrapper.startForm
-    .row.valign
-      .input-field.startFormUserName
-        input(placeholder='Enter your name' type='text' id='username')
-      a.waves-effect.btn.center-align.startFormStartButton Start!
+  .center-align.startForm
+    .startFormUserName
+      input(placeholder='Enter your name' type='text' id='username')
+    a.waves-effect.btn.startFormStartButton Start!
 
 template(name='gameField')
   .console(id='console')

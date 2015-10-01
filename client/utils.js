@@ -48,6 +48,8 @@ changeStats = function(statChanged){
     switch(stat) {
       case "setHealth":
         Session.set("health",value);
+      case "setMoney":
+        Session.set("money",value);
     }
   });
 };
