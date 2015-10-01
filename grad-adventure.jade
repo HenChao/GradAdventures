@@ -39,12 +39,14 @@ template(name='gameField')
         i.large.material-icons perm_identity
     if showInputButtons
       .options.col.s8.m8.l8
-        .row
-          a.waves-effect.btn.option.red.darken-4 {{optionA}}
-        .row
-          a.waves-effect.btn.option.purple.darken-4 {{optionB}}
-        .row
-          a.waves-effect.btn.option.indigo.darken-4 {{optionC}}
-        .row
-          a.waves-effect.btn.option.teal.darken-4 {{optionD}}
-
+        ul(id='optionsList')
+          li
+            a.waves-effect.btn.option.red.darken-4 {{optionA}}
+          li
+            a.waves-effect.btn.option.purple.darken-4 {{optionB}}
+          li
+            a.waves-effect.btn.option.indigo.darken-4 {{optionC}}
+          li
+            a.waves-effect.btn.option.teal.darken-4 {{optionD}}
+      script.
+        Materialize.showStaggeredList('#optionsList');
