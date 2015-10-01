@@ -6,7 +6,9 @@ appendConsoleText = function(text, callback){
     var word = text.shift();
     if (word == null) {
       clearInterval(displayInterval);
-      return callback();
+      if (typeof(callback) != "undefined"){
+        return callback();
+      }
     }
     $(".console").append(word);
   }, textSpeed);
@@ -25,6 +27,7 @@ advanceScript = function(){
     function() {
       if (typeof(currentLocationInScript.jump) != "undefined"){
         Session.set("scriptLocation", parseNextScriptLocation(currentLocationInScript.jump));
+        $(".console").append("<hr />");
         advanceScript();
       } else {
         setOptionValues(currentLocationInScript.options);
