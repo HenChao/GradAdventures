@@ -21,3 +21,14 @@ template(name='startForm')
 
 template(name='gameField')
   .console
+  if showInputButtons
+    .options.center-align
+      .row
+        a.waves-effect.btn.optionA.red.darken-4 {{optionA}}
+      .row
+        a.waves-effect.btn.optionB.purple.darken-4 {{optionB}}
+      .row
+        a.waves-effect.btn.optionC.indigo.darken-4 {{optionC}}
+      .row
+        a.waves-effect.btn.optionD.teal.darken-4 {{optionD}}
+

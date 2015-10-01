@@ -1,11 +1,21 @@
-slowAppendConsoleText = function(text){
+slowAppendConsoleText = function(text, callback){
   var displayInterval;
   text = text.split('');
   displayInterval = setInterval(function() {
     var word = text.shift();
-    if (word == null) { return clearInterval(displayInterval); }
+    if (word == null) {
+      clearInterval(displayInterval);
+      return callback();
+    }
     $(".console").append(word);
   }, 50);
+};
+
+setOptionValues = function(options){
+  Session.set("optionA", options.A);
+  Session.set("optionB", options.B);
+  Session.set("optionC", options.C);
+  Session.set("optionD", options.D);
 };
 
 String.prototype.format = function() {
