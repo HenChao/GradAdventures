@@ -15,13 +15,16 @@ body
       .row
         .col.s8.m8.l8
           h5.center-align Graduate Adventures
+          .valign-wrapper.name-field
+            i.small.material-icons contacts
+            b.valign {{playerName}}
         .col.s4.m4.l4
           .valign-wrapper
-            i.small.material-icons contacts
-            .valign {{playerName}}
-          .valign-wrapper
             i.small.material-icons today
-            .valign {{date}}          
+            .valign {{date}}
+          .valign-wrapper
+            i.small.material-icons favorite_border
+            .valign {{health}}
     +gameField
 
 template(name='startForm')
