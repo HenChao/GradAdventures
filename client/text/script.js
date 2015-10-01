@@ -8,7 +8,7 @@ tutorial = {
       A:{text:"Liberal Arts",next:"tutorial.programA"},
       B:{text:"Engineering",next:"tutorial.programB"},
       C:{text:"Undecided",next:"tutorial.programC"},
-      D:{text:"Huge-manatees",next:"tutorial.programD"},
+      D:{text:"Huge-Manatees",next:"tutorial.programD"},
     }
   },
 
@@ -34,10 +34,55 @@ tutorial = {
          "especially on an important day like today, will tell the world what type " +
          "of a student you'll be. Choose wisely.",
     options:{
-      A:{text:"Bacon Pancakes",next:"tutorial.programA"},
-      B:{text:"Rear Admiral Crunch",next:"tutorial.programB"},
-      C:{text:"Donuts",next:"tutorial.programC"},
-      D:{text:"Water",next:"tutorial.programD"},
+      A:{text:"Bacon Pancakes",next:"tutorial.breakfastA"},
+      B:{text:"Admiral Crunch",next:"tutorial.breakfastB"},
+      C:{text:"Bear Claws",next:"tutorial.breakfastC"},
+      D:{text:"Glass of Eggs",next:"tutorial.breakfastD"},
+    },
+  },
+
+  breakfastA:{
+    text:"A catchy song, and a solid breakfast. As you chew on " +
+         "your tasty food, you can feel the creative juices flowing " +
+         "in your mind, and the high cholesterol flowing through " +
+         "your heart.",
+    jump:"tutorial.toSchool",},
+  breakfastB:{
+    text:"'About time,' you think to yourself. The Captain of your " +
+         "childhood has finally been promoted after years of excellent " +
+         "service and dedication. As you avoid ripping the upper part of " +
+         "your mouth into shreads, you can feel your life falling into place " +
+         "with military discipline.",
+    jump:"tutorial.toSchool",},
+  breakfastC:{
+    text:"Ah, the personal favorite. Did you know that the bear claw is a Danish " +
+         "pastry which originated in the United States? As you ponder on this supposed " +
+         "paradox, you can feel your brain kicking into gear, ready for the rest of the day.",
+    jump:"tutorial.toSchool",},
+  breakfastD:{
+    text:"A hearty breakfast, though not one which would be recommended by the " +
+         "Surgeon General. After years of medical advances, salmonella is now a " +
+         "thing of the past... but it also brought about the new strand of super " +
+         "avian flu. Scientists are calling it a wash. As you suppress your gag " +
+         "reflex to get the last yolk down, you feel your body getting ready to " +
+         "face the challenges ahead.",
+    jump:"tutorial.toSchool",},
+
+  toSchool:{
+    text:"Showered, dressed, and breakfasted up. You pocket checked for your wallet " +
+         "and phone, then you're off to campus! Though you've been on campus before " +
+         "to visit when applying to the graduate program, it isn't your undergraduate " +
+         "alma mater, so everything around is still foreign to you. Though you do notice " +
+         "a lot of those commonalities across Universities: weird art structures that " +
+         "litter the grounds, fancy Teslas driven by the Professors and cheap Civics " +
+         "by the students, and the guard towers littering the outskirts of campus. " +
+         "You arrive on campus a bit earlier than expected, so you have some time before " +
+         "you need to report for work. What would you like to do?",
+    options:{
+      A:{text:"Stop by the Lab",next:"tutorial.breakfastA"},
+      B:{text:"Go to the Commons",next:"tutorial.breakfastB"},
+      C:{text:"Sit in a Class",next:"tutorial.breakfastC"},
+      D:{text:"Get a Cup of Coffee",next:"tutorial.breakfastD"},
     },
   },
 };

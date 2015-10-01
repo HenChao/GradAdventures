@@ -1,5 +1,5 @@
 appendConsoleText = function(text, callback){
-  var textSpeed = 30; //In ms
+  var textSpeed = 50; //In ms
   var displayInterval;
   text = text.split('');
   displayInterval = setInterval(function() {
