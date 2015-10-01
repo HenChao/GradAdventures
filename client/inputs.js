@@ -5,6 +5,7 @@ Template.body.helpers({
   playerName: function(){return Session.get("playerName");},
   date: function(){return Session.get("date");},
   health: function(){return Session.get("health");},
+  money: function(){return Session.get("money");},
 });
 
 Template.body.onRendered(function() {
@@ -17,8 +18,8 @@ Template.startForm.events({
     if( inputName ) {
       Session.set("playerName", inputName);
       Session.set("scriptLocation", tutorial.welcome);
-      Session.set("date",0);
-      Session.set("health","?");
+      Session.set("date",1);
+      Session.set("money",0);
     }
   }
 });
