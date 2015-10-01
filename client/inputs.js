@@ -25,6 +25,14 @@ Template.gameField.onRendered(function () {
   clearScreen();
   advanceScript();
   Ps.initialize(document.getElementById('console'));
+
+  var elm = document.querySelector('#sprite');
+  var sprite = new Motio(elm,{
+    fps:8,
+    frames: 15,
+  });
+
+  sprite.play();
 });
 
 Template.gameField.helpers({

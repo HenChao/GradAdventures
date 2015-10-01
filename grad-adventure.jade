@@ -34,11 +34,11 @@ template(name='startForm')
 template(name='gameField')
   .console(id='console')
   .input-row.row.valign-wrapper
-    .col.s4.m4.l4.valign
+    .col.s6.m4.l4.valign
       .avatar.center-align
-        i.large.material-icons perm_identity
+        .sprite-small(id='sprite')
     if showInputButtons
-      .options.col.s8.m8.l8
+      .options.col.s6.m8.l8
         ul(id='optionsList')
           li
             a.waves-effect.btn.option.red.darken-4 {{optionA}}
