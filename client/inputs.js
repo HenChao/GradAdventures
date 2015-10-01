@@ -12,15 +12,24 @@ Template.body.onRendered(function() {
   $('body').bind('touchmove', function(e){e.preventDefault()})
 });
 
+startGame = function() {
+  var inputName = $('.username').val();
+  if( inputName ) {
+    Session.set("playerName", inputName);
+    Session.set("scriptLocation", tutorial.welcome);
+    Session.set("date",1);
+    Session.set("money",0);
+  }
+}
+
 Template.startForm.events({
-  "click .startFormStartButton": function(event) {
-    var inputName = $('#username').val();
-    if( inputName ) {
-      Session.set("playerName", inputName);
-      Session.set("scriptLocation", tutorial.welcome);
-      Session.set("date",1);
-      Session.set("money",0);
+  "keypress .username" : function(event){
+    if (event.which === 13) { //Enter key
+      startGame();
     }
+  },
+  "click .startFormStartButton": function(event) {
+    startGame();
   }
 });
 
