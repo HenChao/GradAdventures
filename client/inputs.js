@@ -49,6 +49,7 @@ Template.gameField.onRendered(function () {
 
 Template.gameField.helpers({
   showInputButtons: function() {
+    Session.set("globalTextSpeed", 30); //reset text speed back to 30 if user clicked to advance the text
     return Session.get("showInputs");
   },
   optionA: function() { return Session.get("optionA"); },

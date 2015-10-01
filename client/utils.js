@@ -1,8 +1,10 @@
+Session.set("globalTextSpeed", 30); //In ms
 appendConsoleText = function(text, callback){
-  var textSpeed = 30; //In ms
   var displayInterval;
   text = text.split('');
-  displayInterval = setInterval(function() {
+
+  var intervalFunc = function() {
+    clearInterval(displayInterval);
     var word = text.shift();
     if (word == null) {
       clearInterval(displayInterval);
@@ -13,7 +15,10 @@ appendConsoleText = function(text, callback){
     $(".console").append(word);
     document.getElementById('console').scrollTop = 9999;
     Ps.update(document.getElementById('console'));
-  }, textSpeed);
+    displayInterval = setInterval(intervalFunc, Session.get("globalTextSpeed"));
+  };
+
+  displayInterval = setInterval(intervalFunc, Session.get("globalTextSpeed"));
 };
 
 setOptionValues = function(options){
@@ -22,6 +27,10 @@ setOptionValues = function(options){
   Session.set("optionC", options.C.text);
   Session.set("optionD", options.D.text);
 };
+
+advanceText = function(){
+  Session.set("globalTextSpeed",0);
+}
 
 advanceScript = function(){
   currentLocationInScript = Session.get("scriptLocation");
