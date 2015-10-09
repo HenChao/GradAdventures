@@ -29,3 +29,11 @@ Template.gameField.helpers({
   optionC: function() { return Session.get("optionC"); },
   optionD: function() { return Session.get("optionD"); },
 });
+
+Template.gameField.events({
+  "click .option" : function(event) {
+       var nextScriptLocation = getResultForOption($(event.toElement).text()); 
+       Session.set("scriptLocation", nextScriptLocation);
+       clearAndRedraw();
+  } 
+});

@@ -12,10 +12,10 @@ slowAppendConsoleText = function(text, callback){
 };
 
 setOptionValues = function(options){
-  Session.set("optionA", options.A);
-  Session.set("optionB", options.B);
-  Session.set("optionC", options.C);
-  Session.set("optionD", options.D);
+  Session.set("optionA", options.A.text);
+  Session.set("optionB", options.B.text);
+  Session.set("optionC", options.C.text);
+  Session.set("optionD", options.D.text);
 };
 
 showTextAndOptions = function(){
@@ -26,6 +26,25 @@ showTextAndOptions = function(){
       Session.set("showInputs", true);
   });
 };
+
+clearAndRedraw = function(){
+  Session.set("showInputs", false);
+  $(".console").html('');
+  showTextAndOptions();
+};
+
+getResultForOption = function(chosenOption) {
+  var scriptOptions = Session.get("scriptLocation").options;
+  for(var choice in scriptOptions){
+    if(scriptOptions[choice].text == chosenOption){
+      var nextScriptLocation = scriptOptions[choice].next;
+      nextScriptLocation = nextScriptLocation.split(".");
+      return stages[nextScriptLocation[0]][nextScriptLocation[1]];
+    }
+  }
+
+  return "Result not found for the chosen option";
+}
 
 String.prototype.format = function() {
   var text = this;
