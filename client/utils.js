@@ -8,7 +8,7 @@ slowAppendConsoleText = function(text, callback){
       return callback();
     }
     $(".console").append(word);
-  }, 50);
+  }, 30);
 };
 
 setOptionValues = function(options){

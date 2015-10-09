@@ -2,14 +2,17 @@ head
     title Graduate Adventures
     link(href='http://fonts.googleapis.com/icon?family=Material+Icons',rel='stylesheet')
     link(href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css')
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
     meta(name='viewport',content='width=device-width, initial-scale=1.0')
 
 body
-  div(class='red lighten-2' id='title_header')
-    h1 Graduate Adventures
   if playerNameNotSet 
+    div(class='red lighten-2' id='title_header')
+      h1 Graduate Adventures
     +startForm
   else
+    div(class='red lighten-2' id='title_header')
+      h5 Graduate Adventures
     +gameField
 
 template(name='startForm')
@@ -21,14 +24,18 @@ template(name='startForm')
 
 template(name='gameField')
   .console
-  if showInputButtons
-    .options.center-align
-      .row
-        a.waves-effect.btn.optionA.red.darken-4 {{optionA}}
-      .row
-        a.waves-effect.btn.optionB.purple.darken-4 {{optionB}}
-      .row
-        a.waves-effect.btn.optionC.indigo.darken-4 {{optionC}}
-      .row
-        a.waves-effect.btn.optionD.teal.darken-4 {{optionD}}
+  .input-row.row.valign-wrapper
+    .col.s4.m4.l4.valign
+      .avatar.center-align
+        i.large.material-icons perm_identity
+    if showInputButtons
+      .options.col.s8.m8.l8
+        .row
+          a.waves-effect.btn.optionA.red.darken-4 {{optionA}}
+        .row
+          a.waves-effect.btn.optionB.purple.darken-4 {{optionB}}
+        .row
+          a.waves-effect.btn.optionC.indigo.darken-4 {{optionC}}
+        .row
+          a.waves-effect.btn.optionD.teal.darken-4 {{optionD}}
 
