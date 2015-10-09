@@ -22,8 +22,13 @@ showTextAndOptions = function(){
   currentLocationInScript = Session.get("scriptLocation");
   slowAppendConsoleText(currentLocationInScript.text.format(),
     function() {
-      setOptionValues(currentLocationInScript.options);
-      Session.set("showInputs", true);
+      if (typeof(currentLocationInScript.jump) != "undefined"){
+        Session.set("scriptLocation", parseNextScriptLocation(currentLocationInScript.jump));
+        showTextAndOptions();
+      } else {
+        setOptionValues(currentLocationInScript.options);
+        Session.set("showInputs", true);
+      }
   });
 };
 
@@ -33,13 +38,17 @@ clearAndRedraw = function(){
   showTextAndOptions();
 };
 
+parseNextScriptLocation = function(location) {
+  var nextScriptLocation = location;
+  nextScriptLocation = nextScriptLocation.split(".");
+  return stages[nextScriptLocation[0]][nextScriptLocation[1]];
+};
+
 getResultForOption = function(chosenOption) {
   var scriptOptions = Session.get("scriptLocation").options;
   for(var choice in scriptOptions){
     if(scriptOptions[choice].text == chosenOption){
-      var nextScriptLocation = scriptOptions[choice].next;
-      nextScriptLocation = nextScriptLocation.split(".");
-      return stages[nextScriptLocation[0]][nextScriptLocation[1]];
+      return parseNextScriptLocation(scriptOptions[choice].next);
     }
   }
 
