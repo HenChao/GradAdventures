@@ -9,18 +9,15 @@ Template.startForm.events({
     var inputName = $('#username').val();
     if( inputName ) {
       $('.startForm').fadeOut();
-      Session.set("showInputs", false);
       Session.set("playerName", inputName);
+      Session.set("scriptLocation", tutorial.welcome);
     }
   }
 });
 
 Template.gameField.onRendered(function () {
-  slowAppendConsoleText(tutorial.welcome.text.format(Session.get("playerName")),
-    function() {
-      setOptionValues(tutorial.welcome.options);
-      Session.set("showInputs", true);
-  });
+  Session.set("showInputs", false);
+  showTextAndOptions();
 });
 
 Template.gameField.helpers({

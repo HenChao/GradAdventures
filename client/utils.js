@@ -18,12 +18,18 @@ setOptionValues = function(options){
   Session.set("optionD", options.D);
 };
 
+showTextAndOptions = function(){
+  currentLocationInScript = Session.get("scriptLocation");
+  slowAppendConsoleText(currentLocationInScript.text.format(),
+    function() {
+      setOptionValues(currentLocationInScript.options);
+      Session.set("showInputs", true);
+  });
+};
+
 String.prototype.format = function() {
   var text = this;
-  for (var i = 0; i < arguments.length; i++){
-    var replacement = '{' + i + '}';
-    text = text.replace(replacement, arguments[i]);
-  }
+  text = text.replace("{playerName}", Session.get("playerName"));
   return text;
 };
 
